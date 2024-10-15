@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U/M3U8 Link Checker</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .accessible {
+            background-color: green;
+        }
+        .not-accessible {
+            background-color: red;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>M3U/M3U8 Link Checker</h1>
+    <div class="input-group">
+        <label for="fileInput">Select M3U/M3U8 file:</label>
+        <input type="file" id="fileInput" accept=".m3u,.m3u8">
+    </div>
+    <div class="input-group">
+        <label for="timeoutInput">Timeout (in milliseconds):</label>
+        <input type="number" id="timeoutInput" value="5000" min="1000" step="1000">
+    </div>
+    <button id="checkButton">Check Links</button>
+    <button id="stopButton">Stop Checking</button>
+    <div id="progress"></div>
+    <div id="results">
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Link</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
